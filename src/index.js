@@ -18,12 +18,16 @@ app.engine('hbs', handlebars({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home');
 });
 
 app.get('/news', (req, res) => {
     res.render('news');
+});
+
+app.get('/search', (req, res) => {
+    res.render('search');
 });
 
 app.listen(port, () => {
